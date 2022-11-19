@@ -2,7 +2,6 @@ package com.example.lab2.repository;
 
 import com.example.lab2.entity.Room;
 import com.example.lab2.entity.Session;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 
@@ -21,18 +20,18 @@ public class FakeSessionRepository implements SessionRepository {
         this.movieRepository = movieRepository;
         this.sessions = new TreeMap<>();
         this.room = new Room(10, "Room A");
-        sessions.put(1, new Session(2022, 10, 31, 10, 0, movieRepository.getMovieById(1)));
-        sessions.put(2, new Session(2022, 10, 31, 12, 0, movieRepository.getMovieById(2)));
-        sessions.put(3, new Session(2022, 10, 31, 14, 0, movieRepository.getMovieById(3)));
-        sessions.put(4, new Session(2022, 10, 31, 16, 0, movieRepository.getMovieById(4)));
-        sessions.put(5, new Session(2022, 11, 1, 8, 0, movieRepository.getMovieById(1)));
-        sessions.put(6, new Session(2022, 11, 1, 10, 0, movieRepository.getMovieById(4)));
-        sessions.put(7, new Session(2022, 11, 1, 14, 0, movieRepository.getMovieById(2)));
-        sessions.put(8, new Session(2022, 11, 2, 16, 0, movieRepository.getMovieById(3)));
-        sessions.put(9, new Session(2022, 11, 2, 20, 0, movieRepository.getMovieById(1)));
-        sessions.put(10, new Session(2022, 11, 2, 22, 0, movieRepository.getMovieById(4)));
-        sessions.put(11, new Session(2022, 11, 3, 12, 0, movieRepository.getMovieById(3)));
-        sessions.put(12, new Session(2022, 11, 3, 14, 0, movieRepository.getMovieById(2)));
+        sessions.put(1, new Session(10, 0, movieRepository.getMovieById(1)));
+        sessions.put(2, new Session(12, 0, movieRepository.getMovieById(2)));
+        sessions.put(3, new Session(14, 0, movieRepository.getMovieById(3)));
+        sessions.put(4, new Session(16, 0, movieRepository.getMovieById(4)));
+        sessions.put(5, new Session(8, 0, movieRepository.getMovieById(1)));
+        sessions.put(6, new Session(10, 0, movieRepository.getMovieById(4)));
+        sessions.put(7, new Session( 14, 0, movieRepository.getMovieById(2)));
+        sessions.put(8, new Session(16, 0, movieRepository.getMovieById(3)));
+        sessions.put(9, new Session(20, 0, movieRepository.getMovieById(1)));
+        sessions.put(10, new Session(22, 0, movieRepository.getMovieById(4)));
+        sessions.put(11, new Session(12, 0, movieRepository.getMovieById(3)));
+        sessions.put(12, new Session(14, 0, movieRepository.getMovieById(2)));
     }
 
     @Override

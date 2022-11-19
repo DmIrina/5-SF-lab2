@@ -62,6 +62,6 @@ public class SessionServiceImpl implements SessionService{
 
     @Override
     public void deleteSession(int id) {
-
+        sessionRepository.deleteSession(id);
     }
 }
