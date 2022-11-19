@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Home - Home Page | Cinema</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1 class="yellow-background">Hello! Welcome to "Cinema #1"!</h1>
+
+<form action="#" th:action="@{/}" th:object="${user}" method="POST">
+    <p>Login (optional):
+        <label>
+            <input type="text" th:field="${user.name}"/>
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="Log in"/>
+        <input type="reset" value="Reset"/>
+    </p>
+</form>
+</body>
+</html>
