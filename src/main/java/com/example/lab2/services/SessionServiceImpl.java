@@ -2,17 +2,15 @@ package com.example.lab2.services;
 
 import com.example.lab2.entity.Movie;
 import com.example.lab2.entity.Session;
-import com.example.lab2.repository.MovieRepository;
 import com.example.lab2.repository.SessionRepository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Service
-public class SessionServiceImpl implements SessionService{
+public class SessionServiceImpl implements SessionService {
 
     private SessionRepository sessionRepository;
 
@@ -21,7 +19,7 @@ public class SessionServiceImpl implements SessionService{
     }
 
     @Override
-    public void addSession(Session session) {
+    public void saveSession(Session session) {
         sessionRepository.saveUpdateSession(session);
     }
 
@@ -52,12 +50,6 @@ public class SessionServiceImpl implements SessionService{
     @Override
     public ArrayList<Session> getSessionsByMovieName(String movie) {
         return sessionRepository.getSessionsByMovieName(movie);
-    }
-
-    @Override
-    public Session updateSession(int id, Session session) {
-        sessionRepository.saveUpdateSession(session);
-        return session;
     }
 
     @Override

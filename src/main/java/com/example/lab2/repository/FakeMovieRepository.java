@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 @Repository
-public class FakeMovieRepository implements MovieRepository{
+public class FakeMovieRepository implements MovieRepository {
     private final TreeMap<Integer, Movie> movies;
 
-    public FakeMovieRepository(){
+    public FakeMovieRepository() {
         this.movies = new TreeMap<>();
         movies.put(1, new Movie(1, "Hunger Games", "It's about Katniss Everdin, revolution and so on."));
         movies.put(2, new Movie(2, "Forsage", "Cool guys fly on cars."));

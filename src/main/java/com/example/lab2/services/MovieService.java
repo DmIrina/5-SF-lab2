@@ -6,7 +6,10 @@ import java.util.ArrayList;
 
 public interface MovieService {
     Movie findMovieById(int id);
+
     Movie findMovieByName(String name);
+
     boolean isExistingByName(String name);
-    ArrayList<String> getAllMovies();
+
+    ArrayList<Movie> getAllMovies();
 }

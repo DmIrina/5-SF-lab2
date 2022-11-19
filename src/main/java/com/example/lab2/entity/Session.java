@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 
@@ -18,6 +17,10 @@ public class Session {
     private LocalTime time;
     private Room room;
 
+    public Session() {
+
+    }
+
     public Session(LocalTime time, Movie movie) {
         this.time = time;
         this.movie = movie;
@@ -28,7 +31,8 @@ public class Session {
         this.movie = movie;
     }
 
-    public Session(int hours, int minutes, Movie movie, Room room) {
+    public Session(int id, int hours, int minutes, Movie movie, Room room) {
+        this.id = id;
         this.time = LocalTime.of(hours, minutes);
         this.movie = movie;
         this.room = room;

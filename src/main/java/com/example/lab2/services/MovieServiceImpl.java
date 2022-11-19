@@ -1,16 +1,13 @@
 package com.example.lab2.services;
 
 import com.example.lab2.entity.Movie;
-import com.example.lab2.repository.FakeMovieRepository;
-import com.example.lab2.repository.FakeSessionRepository;
 import com.example.lab2.repository.MovieRepository;
-import com.example.lab2.repository.SessionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
 @Service
-public class MovieServiceImpl implements MovieService{
+public class MovieServiceImpl implements MovieService {
 
     private MovieRepository movieRepository;
 
@@ -34,7 +31,7 @@ public class MovieServiceImpl implements MovieService{
     }
 
     @Override
-    public ArrayList<String> getAllMovies() {
-        return new ArrayList<>(movieRepository.getAllMovies().stream().map(Movie::getName).toList());
+    public ArrayList<Movie> getAllMovies() {
+        return movieRepository.getAllMovies();
     }
 }

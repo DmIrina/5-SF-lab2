@@ -1,14 +1,15 @@
 package com.example.lab2.entity;
 
-import lombok.Data;
+import lombok.Getter;
 
-
-@Data
+@Getter
 public class Room {
+    private int id;
     private final String name;
     private boolean[][] seats;
 
-    public Room(int count, String name) {
+    public Room(int id, int count, String name) {
+        this.id = id;
         this.name = name;
         this.seats = new boolean[count][count];
     }

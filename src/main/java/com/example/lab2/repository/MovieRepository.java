@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public interface MovieRepository {
     ArrayList<Movie> getAllMovies();
+
     Movie getMovieById(int id);
+
     Movie getMovieByName(String name);
 }
