@@ -1,0 +1,19 @@
+.yellow-background {
+    background-color: #e5da4b;
+}
+
+.movies {
+    width:100%
+}
+.movies li {
+    float:left;
+    width:286px;
+    margin-right:15px
+}
+.movies li.last {
+    margin-right:600px
+}
+.movies li p {
+    margin:5px 0 15px 0;
+    padding-right:40px
+}

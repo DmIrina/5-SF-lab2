@@ -1,0 +1,124 @@
+* {
+    margin:0;
+    padding:0
+}
+html, body {
+    min-width:940px
+}
+body {
+    background:#000;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:100%;
+    line-height:1em;
+    color:#858585
+}
+#main {
+    width:940px;
+    margin:0 auto;
+    font-size:0.875em
+}
+#header {
+    height:171px;
+    margin-bottom:-8px
+}
+.wrapper {
+    width:100%;
+    overflow:hidden
+}
+.tail-top {
+    background:url(../../images/tail-top.gif) left top repeat-x #1d1d1d
+}
+.tail-bottom {
+    background:url(../../images/tail-bottom.gif) left bottom repeat-x
+}
+h2 {
+    font-size:30px;
+    line-height:1.2em;
+    color: #bfbfbf;
+    text-transform:uppercase;
+    margin-bottom:12px
+}
+h2 span {
+    display:block;
+    font-size:40px;
+    color:yellow;
+}
+h3 {
+    font-size:30px;
+    line-height:1.2em;
+    color:#bfbfbf;
+    margin-bottom:20px
+}
+h3 span {
+    color:#d72a18
+}
+.link1 {
+    display:block;
+    float:left;
+    background:url(../images/link1-right.png) no-repeat right top;
+    color:#fff;text-decoration:none;
+    line-height:1em;
+    cursor:pointer
+}
+.link1 span span {
+    display:block;
+    background:url(../../images/link1-tail.gif) repeat-x left top;
+    padding:8px 15px
+}
+#header .row-1 {
+    height:112px;
+    width:100%;
+    overflow:hidden
+}
+#header .row-1 .fleft {
+    font-size:40px;
+    line-height:1.2em;
+
+    margin-top: 40px;
+}
+#header .row-1 .fright {
+    font-size:20px;
+    line-height:1.2em;
+    margin-left: 650px;
+}
+#content .content {
+    padding:30px 0 39px 50px;
+}
+#slogan {
+    width:990px;
+    height:322px;
+    position:relative;
+    background:url(../../images/1.jpg) no-repeat left top;
+    color:#1d1d1d
+}
+#slogan p {
+    margin-bottom:23px
+}
+#slogan .inside {
+    padding:36px 0 0 50px;
+    width:320px;
+    color:#bfbfbf;
+}
+.movies {
+    width:100%
+}
+.movies li {
+    float:left;
+    width:286px;
+    margin-right:15px
+}
+.movies li.last {
+    margin-right:600px
+}
+.movies li p {
+    margin:5px 0 15px 0;
+    padding-right:40px
+}
+h4 {
+    font-size:20px;
+    line-height:1.2em;
+    letter-spacing:-1px;
+    color:yellow;
+    margin-bottom:18px
+}
+
