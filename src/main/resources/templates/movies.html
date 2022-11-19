@@ -6,23 +6,26 @@
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h2>Hello there<span th:text="${user != null && user.name != null && user.name != '' ? (', ' + user.name + '!') : '!'}">
-
-</span>
-</h2>
+<h2>Hello there!</h2>
 <p>Our cinema is meeting you!</p>
+
 <div th:switch="${#lists.size(movieList)}">
     <div th:case="0">Sorry, no movies for today :(</div>
     <div th:case="*">
         <h4>Here is a list of movies for today: </h4>
         <ul class="movies">
-            <div th:each="movie:${movieList}" th:text="${movie}"/>
+            <li th:each="movie:${movieList}">
+                <a th:href="@{/movies/single/{id}(id = ${movie.id})}">
+                    <span th:text="${movie.name}"></span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
-<form action="">
+
+<form action="/sessions">
     <p>
-        <input type="submit" value="Back"/>
+        <input type="submit" value="I am the admin!!"/>
     </p>
 </form>
 </body>

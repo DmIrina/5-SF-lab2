@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit sessions</title>
+</head>
+<body>
+<h3>All sessions</h3>
+<table>
+    <thead>
+    <tr>
+        <th> Movie</th>
+        <th> Time</th>
+        <th> Room</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:if="${sessionList.empty}">
+        <td colspan="2"> No sessions for today yet. Add some!</td>
+    </tr>
+    <tr th:each="session : ${sessionList}">
+        <td><span th:text="${session.movie}"> Movie </span></td>
+        <td><span th:text="${session.time}"> Time </span></td>
+        <td><span th:text="${session.room}"> Room </span></td>
+    </tr>
+    </tbody>
+
+</table>
+
+session edit delete
+add new
+
+<form action="/">
+    <p>
+        <input type="submit" value="To main"/>
+    </p>
+</form>
+</body>
+</html>

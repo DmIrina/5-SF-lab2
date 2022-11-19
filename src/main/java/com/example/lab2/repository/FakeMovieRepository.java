@@ -12,10 +12,10 @@ public class FakeMovieRepository implements MovieRepository{
 
     public FakeMovieRepository(){
         this.movies = new TreeMap<>();
-        movies.put(1, new Movie("Hunger Games", "It's about Katniss Everdin, revolution and so on."));
-        movies.put(2, new Movie("Forsage", "Cool guys fly on cars."));
-        movies.put(3, new Movie("Twilight", "Two dumb teenagers are in love."));
-        movies.put(4, new Movie("Iron Man", "guy in robot suit"));
+        movies.put(1, new Movie(1, "Hunger Games", "It's about Katniss Everdin, revolution and so on."));
+        movies.put(2, new Movie(2, "Forsage", "Cool guys fly on cars."));
+        movies.put(3, new Movie(3, "Twilight", "Two dumb teenagers are in love."));
+        movies.put(4, new Movie(4, "Iron Man", "guy in robot suit"));
     }
 
     @Override

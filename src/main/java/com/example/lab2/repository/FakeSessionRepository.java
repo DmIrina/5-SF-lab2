@@ -14,8 +14,6 @@ import java.util.TreeMap;
 public class FakeSessionRepository implements SessionRepository {
     private TreeMap<Integer, Session> sessions;
     private Room room;
-
-    // @Autowired
     private FakeMovieRepository movieRepository;
 
     

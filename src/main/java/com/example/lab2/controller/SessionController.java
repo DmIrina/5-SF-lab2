@@ -7,17 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Order(2)
+
 @Controller
 public class SessionController {
 
     @Autowired
     SessionService sessionService;
 
-    @GetMapping("/movies")
-    String moviesForToday(Model model) {
-        model.addAttribute("movieList", sessionService.getAvailableMovies());
-        return "movies";
+    @GetMapping("/sessions")
+    String editSessions(Model model) {
+        model.addAttribute("sessionList", sessionService.getAllSessions());
+        return "sessions";
     }
-
 }
