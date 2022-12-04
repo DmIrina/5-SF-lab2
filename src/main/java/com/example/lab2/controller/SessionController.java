@@ -5,8 +5,11 @@ import com.example.lab2.services.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -20,36 +23,27 @@ public class SessionController {
     }
 
     @GetMapping("/sessions")
-    String editSessions(Model model) {
+    String showSessionList(Model model) {
         model.addAttribute("sessionList", sessionService.getAllSessions());
         return "sessions";
     }
 
-    @GetMapping("/sessions/show")
-    public String addBuyerForm(Model model) {
-        model.addAttribute("sess", new Session());
-        model.addAttribute("sessionId", new Session().getId());
-        return "sessions";
-    }
-
-    @RequestMapping("/sessions/add")
-    public String showBuyerPager(Model model) {
-        List<Session> sessions = sessionService.getAllSessions();
-        model.addAttribute("sessions", sessions);
-        model.addAttribute("sess", new Session());
-        return "sessions";
+    @GetMapping("/sessions/add")
+    public String addSession(Model model) {
+        Session newSession = new Session();
+        model.addAttribute("newSession", newSession);
+        return "add";
     }
 
     @PostMapping("/sessions/add")
-    public String postBuyerForm(@ModelAttribute("sess") Session session, Model model) {
-        sessionService.saveSession(session);
-        model.addAttribute("sess", new Session());
+    public String saveSession(@ModelAttribute("newSession") Session newSession) {
+        sessionService.saveSession(newSession);
         return "redirect:/sessions";
     }
 
-    @PostMapping("/sessions/delete/{id}")
-    public String deleteSession(@PathVariable int id) {
-        sessionService.deleteSession(id);
-        return "redirect:/sessions";
+    @RequestMapping("/sessions")
+    public String deleteSession(@ModelAttribute(value="deletedSession") Session delSess) {
+        sessionService.deleteSession(delSess.getId());
+        return "redirect:sessions";
     }
 }

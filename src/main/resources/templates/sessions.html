@@ -19,17 +19,38 @@
     <tr th:if="${sessionList.empty}">
         <td colspan="2"> No sessions for today yet. Add some!</td>
     </tr>
-    <tr th:each="session : ${sessionList}">
-        <td><span th:text="${session.movie}"> Movie </span></td>
-        <td><span th:text="${session.time}"> Time </span></td>
-        <td><span th:text="${session.room}"> Room </span></td>
+    <tr th:each="sess : ${sessionList}">
+        <td><span th:text="${sess.movie.name}"> Movie </span></td>
+        <td><span th:text="${sess.time}"> Time </span></td>
+        <td><span th:text="${sess.room.name}"> Room </span></td>
+        <td>
+
+            <form th:action="@{'/sessions/edit/' + ${sess.id}}" th:object="${editedSession}" method="post">
+                <input type="hidden" name="id" th:value="${sess.id}">
+                <input type="hidden" name="movieName" th:value="${sess.movie}">
+                <input type="hidden" name="sessionTime" th:value="${sess.time}">
+                <input type="hidden" name="roomName" th:value="${sess.room.name}">
+                <button type="submit">Edit</button>
+            </form>
+        </td>
+        <td>
+
+            <form th:action="@{/sessions}" th:object="${deletedSession}" method="post">
+                <input type="hidden" name="id" th:value="${sess.id}">
+                <input type="hidden" name="movieName" th:value="${sess.movie}">
+                <input type="hidden" name="sessionTime" th:value="${sess.time}">
+                <input type="hidden" name="roomName" th:value="${sess.room.name}">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
     </tr>
     </tbody>
 
 </table>
 
-session edit delete
+session edit
 add new
+<p><a href="/sessions/add">Add a new session</a></p>
 
 <form action="/">
     <p>
